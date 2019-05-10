@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<title>Kanban board</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
-	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div id="board" class="board">
-		<div class="top-header">
+		<div class="header">
 			<h1>Kanban board</h1>
-			<button class="create-column"><i class="fas fa-folder-plus"></i>Add a column</button>
+			<button class="create-column"><span class="fas fa-plus-square"></span>Add a column</button>
 		</div>
 		<div class="column-container"></div>
 	</div>
@@ -28,7 +28,7 @@
     <script id="card-template" type="x-tmpl-mustache">
         <div class="card">
           <p class="card-description">{{ description }}</p>
-          <button class="btn-delete">x</button>
+          <button class="btn-delete"><span class="fas fa-times"></span></button>
         </div
       </script>
 

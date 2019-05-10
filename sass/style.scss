@@ -1,3 +1,115 @@
 * {
     box-sizing: border-box;
 }
+
+$column-background: #F0F1F6;
+$font-color: #333333;
+$yellow: #ffdd00;
+$header: #B3096E;
+$blue: #076598;
+
+body {
+	font-family: 'Lato', sans-serif;
+	background: url('../images/backgrounds-blank-blue-953214.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+    padding: 0;
+    color: $font-color;
+}
+
+.header {
+	background: white;
+	color: $header;
+    padding: 16px;
+    
+    h1 {
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+    
+    button{
+		padding: 12px;
+		background-color: $yellow;
+		color: white;
+		border: 0;
+		border-radius: 5px;
+        font-size: 0.8em;
+        cursor: pointer; 
+        &:hover {
+            background-color: $blue;
+        }
+        
+        
+        span {
+            margin-right: 10px;
+		}
+	}
+}
+
+.column-container{
+	padding: 25px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.col-parent {
+	display: inline-block;
+	width: 20%;
+	margin-right: 45px;
+}
+
+.column {
+	background: $column-background;
+	width: 100%;
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	.column-title{
+		color: $header;
+		display: inline-block;
+		padding: 0 10px;
+        margin: 0;
+        font-weight: normal;
+        text-transform: uppercase;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		min-height: 100px;
+	}
+}
+
+.card {
+	position: relative;
+	display: block;
+	border-radius: 5px;
+	padding:12px;
+	background: white;
+	color: $font-color;
+    margin-top: 16px;
+
+
+        .btn-delete {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            border: none;
+            border-radius: 50%;
+            color:$blue; 
+            background-color: white;
+            right: -8px;
+            top: -8px;
+            &:hover {
+                background-color: $yellow;
+                color: white;
+            }
+        }
+    
+
+}

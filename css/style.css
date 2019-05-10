@@ -1,4 +1,114 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: url("../images/backgrounds-blank-blue-953214.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+
+.header {
+  background: white;
+  color: #B3096E;
+  padding: 16px;
+}
+
+.header h1 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.header button {
+  padding: 12px;
+  background-color: #ffdd00;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: #076598;
+}
+
+.header button span {
+  margin-right: 10px;
+}
+
+.column-container {
+  padding: 25px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+}
+
+.col-parent {
+  display: inline-block;
+  width: 20%;
+  margin-right: 45px;
+}
+
+.column {
+  background: #F0F1F6;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.column .column-title {
+  color: #B3096E;
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.column ul {
+  list-style-type: none;
+  padding: 0;
+  min-height: 100px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  border-radius: 5px;
+  padding: 12px;
+  background: white;
+  color: #333333;
+  margin-top: 16px;
+}
+
+.card .btn-delete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  color: #076598;
+  background-color: white;
+  right: -8px;
+  top: -8px;
+}
+
+.card .btn-delete:hover {
+  background-color: #ffdd00;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
