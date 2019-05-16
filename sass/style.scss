@@ -1,3 +1,4 @@
+@import 'mixins';
 * {
     box-sizing: border-box;
 }
@@ -63,22 +64,47 @@ body {
 	background: $column-background;
 	width: 100%;
 	border-radius: 5px;
-	padding: 15px;
+    padding: 15px;
+    position: relative;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-	.column-title{
+    
+    .column-title {
 		color: $header;
 		display: inline-block;
 		padding: 0 10px;
         margin: 0;
         font-weight: normal;
         text-transform: uppercase;
-	}
+    }
 
 	ul {
 		list-style-type: none;
 		padding: 0;
-		min-height: 100px;
-	}
+        min-height: 100px;
+        border-top: 1px solid grey;
+    }
+
+    .add-card {
+        padding: 8px;
+		background-color: $yellow;
+		color: white;
+		border: 0;
+		border-radius: 5px;
+        font-size: 0.8em;
+        cursor: pointer;         
+        &:hover {
+            background-color: $blue;
+        }
+
+        .fa-plus-square {
+            margin-right: 6px;
+        }
+    }
+
+    .btn-delete {
+        @include delete;
+    }
+    
 }
 
 .card {
@@ -91,25 +117,8 @@ body {
     margin-top: 16px;
 
 
-        .btn-delete {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            border: none;
-            border-radius: 50%;
-            color:$blue; 
-            background-color: white;
-            right: -8px;
-            top: -8px;
-            &:hover {
-                background-color: $yellow;
-                color: white;
-            }
-        }
-    
+    .btn-delete {
+        @include delete;
+    }  
 
 }

@@ -60,6 +60,7 @@ body {
   width: 100%;
   border-radius: 5px;
   padding: 15px;
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -76,6 +77,49 @@ body {
   list-style-type: none;
   padding: 0;
   min-height: 100px;
+  border-top: 1px solid grey;
+}
+
+.column .add-card {
+  padding: 8px;
+  background-color: #ffdd00;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.column .add-card:hover {
+  background-color: #076598;
+}
+
+.column .add-card .fa-plus-square {
+  margin-right: 6px;
+}
+
+.column .btn-delete {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border: none;
+  border-radius: 50%;
+  top: -8px;
+  right: -8px;
+  color: #076598;
+  background-color: white;
+}
+
+.column .btn-delete:hover {
+  background-color: #ffdd00;
+  color: white;
 }
 
 .card {
@@ -91,6 +135,7 @@ body {
 .card .btn-delete {
   width: 20px;
   height: 20px;
+  position: absolute;
   cursor: pointer;
   display: -ms-flexbox;
   display: flex;
@@ -98,13 +143,12 @@ body {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  position: absolute;
   border: none;
   border-radius: 50%;
+  top: -8px;
+  right: -8px;
   color: #076598;
   background-color: white;
-  right: -8px;
-  top: -8px;
 }
 
 .card .btn-delete:hover {
