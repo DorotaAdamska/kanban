@@ -7,7 +7,7 @@ function Card(description) {
     this.element.querySelector('.card').addEventListener('click', function (event) {
         event.stopPropagation();
         
-        if (event.target.classList.contains('btn-delete')) {
+        if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-times')) {
             self.removeCard();
         }
     });
