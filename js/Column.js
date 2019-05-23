@@ -3,7 +3,7 @@ function Column(id, name) {
 
     this.id = id;
     this.name = name || 'No name given';
-    this.element = generateTemplate('column-template', { name: this.name });
+    this.element = generateTemplate('column-template', { name: this.name, id: this.id });
     initSortable(this.element.querySelector('ul') , 'card');
     this.element.querySelector('.column').addEventListener('click', function (event) {
         if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-times')) {
@@ -25,7 +25,7 @@ function Column(id, name) {
               .then(function(res) {
                 return res.json();
               })
-              .then(function() {
+              .then(function(resp) {
                 var card = new Card(resp.id, cardName);
                 self.addCard(card);
               });  

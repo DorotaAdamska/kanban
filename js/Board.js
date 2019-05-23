@@ -35,3 +35,4 @@ function initSortable(el, groupName) {
         animation: 150
     });
 }
+
