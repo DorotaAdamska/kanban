@@ -10,6 +10,22 @@ function Card(id, name) {
         if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-times')) {
             self.removeCard();
         }
+        if (event.target.classList.contains('btn-change') || event.target.classList.contains('fa-pen')) {
+            var cardName = prompt("Enter new name of the card");
+            if(cardName) {   
+
+                fetch(prefix + baseUrl + '/card/' + self.id, {
+                    method: 'PUT',
+                    headers: myHeaders,
+                    body: JSON.stringify({ name: cardName }),
+                })
+                .then(function(resp) {
+                    self.name = cardName;
+                    self.element.querySelector('.card-description').innerText = self.name
+                });  
+
+            }
+        }
     });
 }
 
