@@ -3,7 +3,7 @@ function Card(id, name) {
     
     this.id = id;
     this.name = name || 'No name given';
-    this.element = generateTemplate('card-template', { description: this.name }, 'li');
+    this.element = generateTemplate('card-template', { description: this.name }, 'li', this.id);
     this.element.querySelector('.card').addEventListener('click', function (event) {
         event.stopPropagation();
         

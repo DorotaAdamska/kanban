@@ -9,7 +9,7 @@ function Column(id, name) {
         if (event.target.classList.contains('btn-delete') || event.target.classList.contains('fa-times')) {
             self.removeColumn();
         }
-        if (event.target.classList.contains('add-card')) {
+        if (event.target.classList.contains('add-card') || event.target.classList.contains('fa-plus-square')) {
             var cardName = prompt("Enter the name of the card");
             event.preventDefault();
 
@@ -29,8 +29,23 @@ function Column(id, name) {
                 var card = new Card(resp.id, cardName);
                 self.addCard(card);
               });  
-            
-            self.addCard(new Card(cardName));
+
+        }
+        if (event.target.classList.contains('btn-change') || event.target.classList.contains('fa-pen')) {
+            var columnName = prompt("Enter new name of the column");
+            if(columnName) {   
+
+                fetch(prefix + baseUrl + '/column/' + self.id, {
+                    method: 'PUT',
+                    headers: myHeaders,
+                    body: JSON.stringify({ name: columnName }),
+                })
+                .then(function(resp) {
+                    self.name = columnName;
+                    self.element.querySelector('.column-title').innerText = self.name
+                });  
+
+            }
         }
     });
 }

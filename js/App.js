@@ -29,7 +29,7 @@ fetch(prefix + baseUrl + '/board', { headers: myHeaders })
 }
 
     
-    function generateTemplate(name, data, basicElement) {
+    function generateTemplate(name, data, basicElement, id = '') {
         var template = document.getElementById(name).innerHTML;
         var element = document.createElement(basicElement || 'div');
         if (name == 'column-template'){
@@ -38,6 +38,7 @@ fetch(prefix + baseUrl + '/board', { headers: myHeaders })
     
         Mustache.parse(template);
         element.innerHTML = Mustache.render(template, data);
+        element.id = id
         return element;
     }
     

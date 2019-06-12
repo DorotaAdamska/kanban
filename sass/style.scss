@@ -101,6 +101,10 @@ body {
         }
     }
 
+    .btn-change {
+        @include change;
+    }
+
     .btn-delete {
         @include delete;
     }
@@ -120,5 +124,9 @@ body {
     .btn-delete {
         @include delete;
     }  
+
+    .btn-change {
+        @include change;
+    }     
 
 }

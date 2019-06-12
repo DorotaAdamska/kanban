@@ -32,7 +32,20 @@ function initSortable(el, groupName) {
     var sortable = Sortable.create(el, {
         group: groupName,
         sort: true,
-        animation: 150
+        animation: 150,
+        onAdd: function(e) {
+
+            var cardId = parseInt(e.item.id)
+            var cardName = e.item.innerText
+            var columnId = parseInt(e.to.id)
+
+            fetch(prefix + baseUrl + '/card/' + cardId, {
+                method: 'PUT',
+                headers: myHeaders,
+                body: JSON.stringify({ name: cardName, bootcamp_kanban_column_id: columnId }),
+            })
+
+        }
     });
 }
 
