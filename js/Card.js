@@ -15,11 +15,12 @@ function Card(id, name) {
             if(cardName) {   
 
                 fetch(prefix + baseUrl + '/card/' + self.id, {
-                    headers: myHeaders,
-                    body: JSON.stringify({ 
-                    name: cardName,
-                    bootcamp_column_id: self.element.parentNode.id
-                    }),
+                     method: 'PUT',
+                     headers: myHeaders,
+                     body: JSON.stringify({ 
+                        name: cardName,
+                        bootcamp_column_id: self.element.parentNode.id
+                     }),
                 })
                 .then(function(resp) {
                     self.name = cardName;
